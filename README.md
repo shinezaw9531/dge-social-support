@@ -1,73 +1,23 @@
-# React + TypeScript + Vite
+# Abu Dhabi DGE Government Portal - AI Factory Wizard
+An advanced, multi-step localized web wizard architected for the Abu Dhabi Department of Government Enablement (DGE) portal transformation program. Integrates real-time generative help through the OpenAI API factory stream.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Architectural Architecture Design Highlights
+- **State Optimization Framework:** Implemented using **Zustand** rather than React Context API. Eliminates unnecessary re-rendering across wide form trees, keeping deep nested state changes completely localized to their input blocks.
+- **Data Persistence Boundaries:** Configured store middleware leveraging unified client `LocalStorage` cache. Progress states persist securely across sudden device changes or intentional page reloads.
+- **Enterprise Verification Security:** Utilizes `React Hook Form` linked with strict `Zod` functional boundaries, ensuring type-safe parsing on multi-step flows.
+- **Internationalization Engine:** Completely custom RTL implementation mapping system components smoothly into clean Arabic structures toggled contextually via an active layout header.
+- **Comprehensive Accessibility Framework:** Enforces strict keyboard controls, native focus tracking configurations, and systematic ARIA element boundaries across input forms and modals.
 
-Currently, two official plugins are available:
+## Quick Start Development Guidelines
+### 1. Prerequisites
+- Node.js v18.0.0+
+- npm or yarn package managers
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+### 2. Setup & Installation
+```bash
+# Clone the repository
+git clone https://github.com/shinezaw9531/dge-social-support.git
+cd dge-ai-factory-portal
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+# Install absolute framework assets
+npm install
